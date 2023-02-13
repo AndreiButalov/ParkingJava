@@ -27,25 +27,27 @@ public class Main {
         Auto auto5 = new Auto("k636");
         Auto auto6 = new Auto("k666");
 
-        System.out.println(parkhaus.einfahrt(auto));
-        System.out.println(parkhaus.einfahrt(auto1));
-        System.out.println(parkhaus.einfahrt(auto2));
-        System.out.println(parkhaus.einfahrt(auto3));
-        System.out.println(parkhaus.einfahrt(auto4));
-        System.out.println(parkhaus.einfahrt(auto5));
+        parkhaus.einfahrt(auto);
+        parkhaus.einfahrt(auto1);
+        parkhaus.einfahrt(auto2);
+        parkhaus.einfahrt(auto3);
+        parkhaus.einfahrt(auto4);
+        parkhaus.einfahrt(auto5);
+        //parkhaus.einfahrt(auto6);
+
         ///// über voll
-        //System.out.println(parkhaus.einfahrt(auto6));
+        //parkhaus.einfahrt(auto6);
 
-        System.out.println(parkhaus.ausfahrt(auto));
-        System.out.println(parkhaus.ausfahrt(auto3));
+        parkhaus.ausfahrt(auto);
+        parkhaus.ausfahrt(auto3);
 
-        System.out.println(parkhaus.isFrei());
+        parkhaus.isFrei();
 
 
-        System.out.println(parkhaus.einfahrt(auto));
-        //System.out.println(parkhaus.ausfahrt(auto));
-        System.out.println(parkhaus.einfahrt(auto5));
-        System.out.println(parkhaus.isFrei());
+        parkhaus.einfahrt(auto);
+        //Sparkhaus.ausfahrt(auto);
+        parkhaus.einfahrt(auto5);
+        parkhaus.isFrei();
 
     }
 }

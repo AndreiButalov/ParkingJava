@@ -26,7 +26,7 @@ public class Parkhaus {
         this.anzahlDerPlaetze = anzahlDerPlaetze;
     }
 
-    public String einfahrt(Fahrzeug fahrzeug) {
+    public void einfahrt(Fahrzeug fahrzeug) {
         /*
         guckt ob das Auto exestiert ist
          */
@@ -36,7 +36,8 @@ public class Parkhaus {
                     continue;
                 } else
                     if (parkhaus[i][j].equals(String.valueOf(fahrzeug))){
-                        return "Das Auto ist schon exestiert";
+                        System.out.println("Das Auto ist schon exestiert");
+                        return;
                     }
             }
         }
@@ -50,16 +51,16 @@ public class Parkhaus {
                 } else {
                     parkhaus[i][j] = String.valueOf(fahrzeug);
                     System.out.println(Arrays.deepToString(parkhaus));// TEST
-                    return "Das Fahrzeug mit dem Kennzeichen " + fahrzeug
-                             + " wird auf der Etage " + i + ", Platz Nummer "
-                             + (j + 1) + " geparkt.";
+                    System.out.println("Das Fahrzeug mit dem Kennzeichen " + fahrzeug
+                            + " wird auf der Etage " + i + ", Platz Nummer "
+                            + (j + 1) + " geparkt.");
+                    return;
                 }
             }
         }
-        return "Leider gibt es keine Plaetze mehr!";
     }
 
-    public String ausfahrt(Fahrzeug fahrzeug) {
+    public void ausfahrt(Fahrzeug fahrzeug) {
         for (int i = 0; i < anzahlDerEtagen; i++) {
             for (int j = 0; j < anzahlDerPlaetze; j++) {
                 if (parkhaus[i][j] == null){
@@ -67,21 +68,24 @@ public class Parkhaus {
                 } else if (parkhaus[i][j].equals(String.valueOf(fahrzeug))) {
                     parkhaus[i][j] = null;
                     System.out.println(Arrays.deepToString(parkhaus));//TEST
-                    return "Das auto mit dem Nummer " + fahrzeug + " ist weg";
+                    System.out.println("Das auto mit dem Nummer " + fahrzeug + " ist weg");
+                }else {
+                    System.out.println("Leider ist Das Auto nicht da, Versuhen Sie bitte noch ein mal");
+                    return ;
                 }
             }
         }
-        return "Leider ist Das Auto nicht da, Versuhen Sie bitte noch ein mal";
+
     }
 
-    public String isFrei(){
+    public void isFrei(){
         for (int i = 0; i < anzahlDerEtagen; i++) {
             for (int j = 0; j < anzahlDerPlaetze; j++) {
                 if (parkhaus[i][j] == null) {
                     System.out.println("Der Platz "+ (j + 1) +" auf der Etage " + i + " ist frei");
+                    return;
                 }
             }
         }
-        return "";
     }
 }
